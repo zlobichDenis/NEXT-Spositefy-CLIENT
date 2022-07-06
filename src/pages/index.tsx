@@ -1,8 +1,10 @@
+import App from "./_app";
+
 const Index = () => {
   return (
-    <div>
-      Main page
-    </div>
+    <>
+      <App />
+    </>
   )
 }
 
