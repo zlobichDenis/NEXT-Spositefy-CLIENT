@@ -1,93 +1,40 @@
-import { useState, MouseEvent, KeyboardEvent, Fragment } from 'react';
-import Box from '@mui/material/Box';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import {
+  CssBaseline,
+  Toolbar,
+  List,
+  Divider,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
+import { NAVBAR_BUTTONS } from "./config";
+import { DrawerStyled, BoxStyled } from "./Navbar.styled";
 
-const Navbar = () => {
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-      (event: KeyboardEvent | MouseEvent) => {
-        if (
-          event &&
-          event.type === 'keydown' &&
-          ((event as KeyboardEvent).key === 'Tab' ||
-            (event as KeyboardEvent).key === 'Shift')
-        ) {
-          return;
-        }
-
-        setState({ ...state, [anchor]: open });
-      };
-
-  const list = (anchor: Anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
+export const Navbar = () => {
   return (
-    <div>
-      {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => (
-        <Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <SwipeableDrawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            onOpen={toggleDrawer(anchor, true)}
-          >
-            {list(anchor)}
-          </SwipeableDrawer>
-        </Fragment>
-      ))}
-    </div>
+    <BoxStyled>
+      <CssBaseline />
+      <DrawerStyled
+        variant="permanent"
+        anchor="left"
+      >
+        <Toolbar />
+        <Divider />
+        <List>
+          {Object.keys(NAVBAR_BUTTONS).map((name) => (
+            <ListItem key={name} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {NAVBAR_BUTTONS[name].icon}
+                </ListItemIcon>
+                <ListItemText primary={NAVBAR_BUTTONS[name].name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </DrawerStyled>
+    </BoxStyled>
   );
-};
-
-export default Navbar;
+}

@@ -16,7 +16,10 @@ export const theme = createTheme({
     },
   },
 
-typography: {
-
-}
+  typography: {
+    fontFamily: 'Manrope',
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
+  }
 });
