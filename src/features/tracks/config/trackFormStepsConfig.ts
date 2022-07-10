@@ -1,0 +1,1 @@
+export const TRACK_FROM_STEPS_CONFIG = ['Info about track', 'Upload track cover', 'Upload track'];

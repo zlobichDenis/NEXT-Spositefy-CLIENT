@@ -5,6 +5,7 @@ import {
   Delete as DeleteIcon,
 } from "@mui/icons-material";
 
+import { stopPropagation } from "utils";
 import { TrackItemProps } from "./types";
 import {
   TrackItemCard,
@@ -21,7 +22,7 @@ export const TrackItem = ({ track, isPlaying = false, onCardClick }: TrackItemPr
 
   return (
     <TrackItemCard onClick={onCardClick}>
-      <IconButton>
+      <IconButton onClick={stopPropagation}>
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </IconButton>
       <TrackItemCardPicture src={picture}/>
