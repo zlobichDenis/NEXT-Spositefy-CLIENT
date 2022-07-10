@@ -1,25 +1,14 @@
 import { createTheme } from "@mui/material";
 
+import { colors } from "./colors";
+
 export const theme = createTheme({
-  palette: {
-    primary: {
-      light: '#DDD7FA',
-      main: '#5030E5',
-    },
-    secondary: {
-      light: '#FDECD9',
-      dark: '#F8C07F',
-      main: '#F5A547',
-    },
-    background: {
-      default: '#EDF3F8',
-    },
-  },
+  palette: colors,
 
   typography: {
     fontFamily: 'Manrope',
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
-  }
+  },
 });

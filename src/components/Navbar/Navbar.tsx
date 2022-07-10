@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import {
   CssBaseline,
   Toolbar,
@@ -9,17 +8,13 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { useRouter } from "next/router";
 
+import { useRoute } from "hooks";
 import { NAVBAR_BUTTONS } from "./config";
 import { DrawerStyled, BoxStyled } from "./Navbar.styled";
 
 export const Navbar = () => {
-  const { push } = useRouter();
-
-  const routeTo = useCallback((route) => () => {
-    push(route);
-  }, [push]);
+  const routeTo = useRoute();
 
   return (
     <BoxStyled>

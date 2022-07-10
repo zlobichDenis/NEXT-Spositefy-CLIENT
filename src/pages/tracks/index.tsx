@@ -1,8 +1,8 @@
-import { TracksList } from "features/tracks";
+import { TracksListPageContainer } from "features/tracks";
 
 const Tracks = () => {
   return (
-    <TracksList />
+    <TracksListPageContainer />
   )
 };
 

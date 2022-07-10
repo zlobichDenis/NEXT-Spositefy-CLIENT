@@ -1,2 +1,2 @@
-export * from './TracksList';
+export * from './TracksListPageContainer';
 export * from './TrackForm';

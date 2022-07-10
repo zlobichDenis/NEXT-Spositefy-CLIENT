@@ -1,17 +1,11 @@
-import { useCallback } from "react";
-import { useRouter } from "next/router";
-import { Button } from "@mui/material";
-
-import { MainLayout } from "layouts";
 import { Track } from "types";
+import { useRoute } from "hooks";
+import { routes } from "shared";
 import {
-  TrackListCardContent,
   TrackListContainer,
-  TrackListCard,
-  TrackListCardBox,
-} from "./TracksList.styled";
-import { CREATE_TRACK_FORM_PATH } from "./constants";
-
+  TrackListBox,
+} from "./TrackList.styled";
+import { TrackItem } from "./components";
 
 // TODO remove when connection with BA will be established
 const mockTracks: Track[] = [
@@ -59,27 +53,22 @@ const mockTracks: Track[] = [
   }
 ];
 
-export const TracksList = () => {
-  const { push } = useRouter();
-
-  const routeToTrackForm = useCallback(() => {
-    push(CREATE_TRACK_FORM_PATH);
-  }, [push]);
+export const TrackList = () => {
+  const routeTo = useRoute();
 
   return (
-    <MainLayout>
-      <TrackListContainer container>
-        <TrackListCard>
-          <TrackListCardBox>
-            <TrackListCardContent container>
-              <h1>List of tracks</h1>
-              <Button onClick={routeToTrackForm}>
-                Upload
-              </Button>
-            </TrackListCardContent>
-          </TrackListCardBox>
-        </TrackListCard>
-      </TrackListContainer>
-    </MainLayout>
+    <TrackListContainer container>
+      <TrackListBox>
+        {mockTracks.map((track) => {
+          return (
+            <TrackItem
+              key={track._id}
+              track={track}
+              onCardClick={routeTo(routes.trackDetails(track._id))}
+            />
+          )
+        })}
+      </TrackListBox>
+    </TrackListContainer>
   )
 };
