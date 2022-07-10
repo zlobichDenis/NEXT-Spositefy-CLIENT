@@ -1,13 +1,9 @@
-import { ThemeProvider } from "@mui/material";
-
-import { theme } from 'theme';
-import { App } from "./app";
+import { MainLayout } from "layouts";
 
 const Index = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+      <MainLayout>
+      </MainLayout>
   )
 }
 
