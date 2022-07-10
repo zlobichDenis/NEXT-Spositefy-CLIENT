@@ -12,5 +12,5 @@ export type Track = {
   listens: number;
   picture: string;
   audio: string;
-  comment: Comment[];
+  comment: Array<Comment>;
 }
