@@ -15,11 +15,11 @@ import { NAVBAR_BUTTONS } from "./config";
 import { DrawerStyled, BoxStyled } from "./Navbar.styled";
 
 export const Navbar = () => {
-  const router = useRouter();
+  const { push } = useRouter();
 
   const routeTo = useCallback((route) => () => {
-    router.push(route);
-  }, [router]);
+    push(route);
+  }, [push]);
 
   return (
     <BoxStyled>

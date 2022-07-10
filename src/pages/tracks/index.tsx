@@ -1,12 +1,8 @@
-import { MainLayout } from "layouts";
+import { TracksList } from "features/tracks";
 
 const Tracks = () => {
   return (
-    <MainLayout>
-      <div>
-        Tracks
-      </div>
-    </MainLayout>
+    <TracksList />
   )
 };
 
