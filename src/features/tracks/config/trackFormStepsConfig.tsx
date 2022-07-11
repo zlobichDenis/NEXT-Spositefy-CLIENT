@@ -35,6 +35,7 @@ export const trackFormConfig = ({
       <TrackFormUploadStep
         fileType="audio/*"
         handleUpload={addTrackAudio}
-      />),
+      />
+    ),
   },
 ];

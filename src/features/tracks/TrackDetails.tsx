@@ -67,7 +67,7 @@ export const TrackDetails = () => {
         <div>
           {mockTrack.comments.map(({ username, text }) => {
             return (
-              <div>
+              <div key={text}>
                 <div>{username}</div>
                 <div>{text}</div>
               </div>

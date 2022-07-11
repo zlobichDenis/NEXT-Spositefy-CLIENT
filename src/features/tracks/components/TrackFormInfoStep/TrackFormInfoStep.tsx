@@ -7,9 +7,9 @@ import {
 import { TRACK_FORM_INPUTS_LABELS } from "../../constants";
 
 type TrackFormInfoStepProps = {
-  handleInputName: (event: ChangeEvent) => void;
-  handleInputArtist: (event: ChangeEvent) => void;
-  handleText: (event: ChangeEvent) => void;
+  handleInputName: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleInputArtist: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleText: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const TrackFormInfoStep = ({ handleInputName, handleInputArtist, handleText }: TrackFormInfoStepProps) => {

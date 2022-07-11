@@ -11,10 +11,15 @@ type TrackFormData = {
   text: string | null;
 }
 
+export type TrackFormStepConfig = {
+  stepName: string;
+  title: string;
+  Component: FC;
+}
+
 export interface UseTrackForm {
   activeStep: number;
   formData: TrackFormData;
-  stepTitle: string;
   addArtistName: (event: ChangeEvent<HTMLInputElement>) => void;
   addName: (event: ChangeEvent<HTMLInputElement>) => void;
   addPicture: (picture: any) => void;
@@ -25,7 +30,7 @@ export interface UseTrackForm {
   goPrevStep: () => void;
   disabledNextButton: boolean;
   disabledPrevButton: boolean;
-  CurrentStepComponent: FC;
+  currentStepConfig: TrackFormStepConfig;
 }
 
 export const useTrackForm = (): UseTrackForm => {
@@ -34,23 +39,23 @@ export const useTrackForm = (): UseTrackForm => {
 
   const addPicture = useCallback((event: any) => {
     setFormData((prevState) => ({ ...prevState, picture: event.target.files[0] }));
-  }, [formData]);
+  }, []);
 
   const addName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevState) => ({ ...prevState, name: event.target.value }));
-  }, [formData]);
+  }, []);
 
   const addArtistName = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevState) => ({ ...prevState, artist: event.target.value }));
-  }, [formData]);
+  }, []);
 
   const addTrackText = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevState) => ({ ...prevState, text: event.target.value }));
-  }, [formData]);
+  }, []);
 
   const addTrackAudio = useCallback((event: any) => {
     setFormData((prevState) => ({ ...prevState, audio: event.target.files[0] }));
-  }, [formData]);
+  }, []);
 
   const reset= useCallback(() => {
     setFormData(TRACK_FORM_INITIAL_VALUE);
@@ -58,11 +63,11 @@ export const useTrackForm = (): UseTrackForm => {
 
   const goNextStep = useCallback(() => {
     setActiveStep((prevState) => prevState + 1);
-  }, [activeStep]);
+  }, []);
 
   const goPrevStep = useCallback(() => {
     setActiveStep((prevState) => prevState - 1);
-  }, [activeStep]);
+  }, []);
 
   const disabledNextButton = activeStep === (TRACK_FORM_STEPS.length - 1);
   const disabledPrevButton = activeStep === TRACK_FORM_INITIAL_STEP;
@@ -73,9 +78,7 @@ export const useTrackForm = (): UseTrackForm => {
     addArtistName,
     addTrackAudio,
     addTrackText,
-  }), []);
-
-  const { title: stepTitle, Component: CurrentStepComponent } = formConfig[activeStep];
+  }), [addTrackAudio, addName, addTrackText, addArtistName, addPicture]);
 
   return {
     activeStep,
@@ -90,7 +93,6 @@ export const useTrackForm = (): UseTrackForm => {
     goPrevStep,
     disabledNextButton,
     disabledPrevButton,
-    stepTitle,
-    CurrentStepComponent,
+    currentStepConfig: formConfig[activeStep],
   };
 };

@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useRouter } from "next/router";
 
 
-export const useRoute = (): (path: string) => void => {
+export const useRoute = () => {
   const { push } = useRouter();
 
   const routeTo = useCallback((path: string) => () => {

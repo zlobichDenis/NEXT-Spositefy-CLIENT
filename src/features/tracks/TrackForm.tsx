@@ -15,16 +15,17 @@ export const TrackForm = () => {
     goPrevStep,
     disabledNextButton,
     disabledPrevButton,
-    stepTitle,
-    CurrentStepComponent,
+    currentStepConfig,
   } = useTrackForm();
+
+  const { title, Component } = currentStepConfig;
 
   return (
     <MainLayout>
       <TrackFormContainer container>
         <TrackFormStepWrapper activeStep={activeStep}>
-          <h2>{stepTitle}</h2>
-          <CurrentStepComponent />
+          <h2>{title}</h2>
+          <Component />
         </TrackFormStepWrapper>
         <TrackFormButtonWrapper container>
           <Button
