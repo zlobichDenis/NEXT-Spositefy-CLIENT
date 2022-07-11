@@ -2,32 +2,31 @@ import { Container, Step, Stepper, StepLabel } from "@mui/material";
 
 import { TrackFromStepProps } from "./types";
 import {
-  TrackFormStepsWrapper,
+  TrackFormStepCardWrapper,
   TrackFormStepCard,
-} from "./TrackFormStep.styled";
-import { TRACK_FROM_STEPS_CONFIG } from "../../config";
+} from "./TrackFormStepWrapper.styled";
+import { TRACK_FORM_STEPS } from "../../constants";
 
-export const TrackFormStep = ({ activeStep, children }: TrackFromStepProps) => {
-
+export const TrackFormStepWrapper = ({ activeStep, children }: TrackFromStepProps) => {
   return (
     <Container>
       <Stepper activeStep={activeStep}>
-        {TRACK_FROM_STEPS_CONFIG.map((step, index) => {
+        {TRACK_FORM_STEPS.map(( stepName, index) => {
           return (
             <Step
-              key={step}
+              key={stepName}
               completed={activeStep > index}
             >
-            <StepLabel>{step}</StepLabel>
+              <StepLabel>{stepName}</StepLabel>
             </Step>
           )
         })}
       </Stepper>
-      <TrackFormStepsWrapper container>
+      <TrackFormStepCardWrapper>
         <TrackFormStepCard>
           {children}
         </TrackFormStepCard>
-      </TrackFormStepsWrapper>
+      </TrackFormStepCardWrapper>
     </Container>
   );
 };

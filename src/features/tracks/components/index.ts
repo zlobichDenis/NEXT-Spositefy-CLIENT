@@ -1,2 +1,5 @@
 export * from './TrackItem';
-export * from './TrackFormStep';
+export * from './TrackFormStepWrapper';
+export * from './TrackFormInfoStep';
+export * from './TrackFormCoverStep';
+export * from './TrackFormUplodStep';
