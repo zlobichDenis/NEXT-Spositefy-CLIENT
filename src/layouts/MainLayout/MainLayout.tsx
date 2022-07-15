@@ -1,4 +1,5 @@
 import { Navbar } from "components";
+import { Player } from "features/Player";
 import { ContainerStyled } from "./MainLayout.styled";
 
 export const MainLayout = ({ children }) => {
@@ -8,6 +9,7 @@ export const MainLayout = ({ children }) => {
       <ContainerStyled>
         {children}
       </ContainerStyled>
+      <Player active={true}/>
     </>
   )
 };
