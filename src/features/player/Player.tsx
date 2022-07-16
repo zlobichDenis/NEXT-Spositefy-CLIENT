@@ -1,8 +1,9 @@
 import { IconButton } from "@mui/material";
-import { PauseCircle as PauseIcon, PlayCircle as PlayIcon } from "@mui/icons-material";
+import { PauseCircle as PauseIcon, PlayCircle as PlayIcon, VolumeUp as VolumeUpIcon } from "@mui/icons-material";
 
 import { stopPropagation } from "utils";
 import { PlayerWrapper, PlayerArtistName, PlayerNameWrapper } from "./Player.styled";
+import { TrackProgress } from "./components";
 
 export const mockTrack = {
   _id: '1',
@@ -37,6 +38,17 @@ export const Player = ({ active }: PlayerProps) => {
         <div>{mockTrack.name}</div>
         <PlayerArtistName>{mockTrack.artist}</PlayerArtistName>
       </PlayerNameWrapper>
+      <TrackProgress
+        currentDuration={10}
+        fullDuration={100}
+        onChange={(event) => console.log('some')}
+      />
+      <VolumeUpIcon />
+      <TrackProgress
+        fullDuration={0}
+        currentDuration={0}
+        onChange={(event) => console.log('some')}
+      />
     </PlayerWrapper>
   )
 };

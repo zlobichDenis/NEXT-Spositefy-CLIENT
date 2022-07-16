@@ -1,5 +1,5 @@
 import { Navbar } from "components";
-import { Player } from "features/Player";
+import { Player } from "features/player";
 import { ContainerStyled } from "./MainLayout.styled";
 
 export const MainLayout = ({ children }) => {

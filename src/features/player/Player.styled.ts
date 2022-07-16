@@ -1,4 +1,5 @@
 import { Grid, styled } from "@mui/material";
+import { VolumeUp } from "@mui/icons-material";
 
 import { colors } from 'theme';
 
@@ -29,4 +30,8 @@ export const PlayerNameWrapper = styled(Grid)`
 export const PlayerArtistName = styled('div')`
   font-size: 12px;
   color: grey;
+`;
+
+export const PlayerVolumeUpIcon = styled(VolumeUp)`
+  margin-left: auto;
 `;
