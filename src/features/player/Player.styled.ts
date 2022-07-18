@@ -1,5 +1,5 @@
 import { Grid, styled } from "@mui/material";
-import { VolumeUp } from "@mui/icons-material";
+import { PauseCircle as PauseIcon, PlayCircle as PlayIcon } from "@mui/icons-material";
 
 import { colors } from 'theme';
 
@@ -7,21 +7,17 @@ export const PlayerWrapper = styled('div')`
   z-index: 9999;
   position: fixed;
   bottom: 0;
-  height: 60px;
   width: 100%;
-  padding: 0 10px;
+  height: 80px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
+  gap: 30px;
   background-color: ${colors.secondary.light};
 `;
 
-export const PlayerControlWrapper = styled(Grid)`
-  width: 200px;
-  margin: 0 20px;
-  flex-direction: column;
-`;
-
 export const PlayerNameWrapper = styled(Grid)`
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -32,6 +28,12 @@ export const PlayerArtistName = styled('div')`
   color: grey;
 `;
 
-export const PlayerVolumeUpIcon = styled(VolumeUp)`
-  margin-left: auto;
+export const PlayerPlayIcon = styled(PlayIcon)`
+  width: 50px;
+  height: 50px;
+`;
+
+export const PlayerPauseIcon = styled(PauseIcon)`
+  width: 50px;
+  height: 50px;
 `;

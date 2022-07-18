@@ -1,3 +1,3 @@
-export const stopPropagation = (event: any) => {
+export const stopPropagation = (event) => {
   event.stopPropagation();
 };

@@ -9,8 +9,9 @@ export type Track = {
   name: string;
   artist: string;
   text: string;
+  age: number;
   listens: number;
   picture: string;
   audio: string;
-  comment: Array<Comment>;
+  comments: Comment[];
 }

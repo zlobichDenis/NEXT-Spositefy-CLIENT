@@ -1,6 +1,4 @@
-import { Slider } from "@mui/material";
-
-import { TrackProgressWrapper } from "./TrackProgress.styled";
+import { TrackProgressWrapper, TrackProgressSlider } from "./TrackProgress.styled";
 
 type TrackProgressProps = {
   fullDuration: number;
@@ -13,10 +11,10 @@ export const TrackProgress = ({ fullDuration, currentDuration, onChange }: Track
 
   return (
     <TrackProgressWrapper>
-      <Slider
+      <TrackProgressSlider
         size="medium"
         step={1}
-        min={currentDuration}
+        min={0}
         max={fullDuration}
         value={currentDuration}
         onChange={onChange}

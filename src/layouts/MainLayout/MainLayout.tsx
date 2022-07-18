@@ -9,7 +9,7 @@ export const MainLayout = ({ children }) => {
       <ContainerStyled>
         {children}
       </ContainerStyled>
-      <Player active={true}/>
+      <Player />
     </>
   )
 };
