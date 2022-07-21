@@ -3,10 +3,12 @@ import { useCallback, useEffect, useState } from "react";
 import { Track } from "types";
 import { stopPropagation } from "utils";
 import { usePlayer } from "features/player";
+import { useTrackListReducer } from "./redux/useTrackListReducer";
 
 export const useTrackList = () => {
   const [playingTrack, setPlayingTrack] = useState<Track | null>(null);
   const { selectTrack } = usePlayer();
+  const { data, getTrackList } = useTrackListReducer();
 
   const changePlayingTrack = useCallback((track) => (event) => {
     stopPropagation(event);
@@ -19,7 +21,12 @@ export const useTrackList = () => {
     }
   }, [playingTrack]);
 
+  useEffect(() => {
+    getTrackList();
+  }, [getTrackList]);
+
   return {
-    changePlayingTrack
+    tracks: data,
+    changePlayingTrack,
   }
 };

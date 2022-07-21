@@ -16,6 +16,6 @@ export const NAVBAR_BUTTONS: NavbarButtonsConfig = {
   tracks: {
     name: 'Tracks',
     icon: <MusicNote color="primary"/>,
-    href: '/tracks-list',
+    href: '/tracks',
   },
 };

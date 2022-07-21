@@ -9,7 +9,7 @@ import {
   selectPlayerState,
   selectPlayerTrack,
   selectPlayerVolume,
-} from "./player.reducer";
+} from "./player.slice";
 import {
   playAction,
   pauseAction,
