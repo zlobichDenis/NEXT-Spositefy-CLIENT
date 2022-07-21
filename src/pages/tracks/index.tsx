@@ -1,4 +1,4 @@
-import { TracksListPageContainer } from "features/tracks";
+import { TracksListPageContainer } from "features/tracks-list";
 
 const Tracks = () => {
   return (

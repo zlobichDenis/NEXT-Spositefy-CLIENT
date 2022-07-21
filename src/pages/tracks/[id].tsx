@@ -1,4 +1,4 @@
-import { TrackDetails } from "features/tracks";
+import { TrackDetails } from "features/track-details";
 
 const TrackDetailsPage = () => {
   return (

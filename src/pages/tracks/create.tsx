@@ -1,4 +1,4 @@
-import { TrackForm } from "features/tracks";
+import { TrackForm } from "features/track-form";
 
 const Create = () => {
   return (

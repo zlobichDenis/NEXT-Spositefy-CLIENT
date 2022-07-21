@@ -1,7 +1,7 @@
 import { useState, useCallback, FC, ChangeEvent, useMemo } from "react";
 
-import { TRACK_FORM_INITIAL_STEP, TRACK_FORM_INITIAL_VALUE, TRACK_FORM_STEPS } from "../constants";
 import { trackFormConfig } from "../config";
+import { TRACK_FORM_INITIAL_VALUE, TRACK_FORM_INITIAL_STEP, TRACK_FORM_STEPS } from "../constants";
 
 type TrackFormData = {
   picture: any;

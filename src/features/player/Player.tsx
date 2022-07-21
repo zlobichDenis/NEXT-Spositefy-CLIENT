@@ -31,7 +31,7 @@ export const Player = () => {
   if (!state.track) {
     return null;
   }
-  console.log(state)
+
   return (
     <PlayerWrapper>
       <IconButton
