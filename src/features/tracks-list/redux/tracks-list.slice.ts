@@ -1,10 +1,10 @@
-import { createSlice, createSelector } from "@reduxjs/toolkit";
-import { AxiosErrorSerialized } from "axios";
+import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { AxiosErrorSerialized } from 'axios';
 
-import { RootState } from "store/rootReducer";
-import { Track } from "types";
-import { REDUX_STATES } from "shared";
-import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from "./track-list.actions";
+import { RootState } from 'store/rootReducer';
+import { Track } from 'types';
+import { REDUX_STATES } from 'shared';
+import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from './track-list.actions';
 
 type TracksListState = {
   state: REDUX_STATES;

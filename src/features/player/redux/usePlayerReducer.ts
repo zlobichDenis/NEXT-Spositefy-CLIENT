@@ -1,7 +1,7 @@
-import { useCallback } from "react";
+import { useCallback } from 'react';
 
-import { useAppDispatch, useAppSelector } from "store";
-import { Track } from "types";
+import { useAppDispatch, useAppSelector } from 'store';
+import { Track } from 'types';
 import {
   PlayerState,
   selectPlayerCurrentTime,
@@ -9,7 +9,7 @@ import {
   selectPlayerState,
   selectPlayerTrack,
   selectPlayerVolume,
-} from "./player.slice";
+} from './player.slice';
 import {
   playAction,
   pauseAction,
@@ -17,7 +17,7 @@ import {
   setDurationAction,
   setTrackAction,
   setCurrentTimeAction,
-} from "./player.actions";
+} from './player.actions';
 
 interface UsePlayerReducer {
   state: PlayerState;

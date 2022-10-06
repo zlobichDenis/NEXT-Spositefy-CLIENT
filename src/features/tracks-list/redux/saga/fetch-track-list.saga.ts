@@ -1,8 +1,8 @@
-import { put, takeLatest, call } from "redux-saga/effects";
-import { AxiosError } from "axios";
+import { put, takeLatest, call } from 'redux-saga/effects';
+import { AxiosError } from 'axios';
 
-import { trackListController } from "api";
-import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from "../track-list.actions";
+import { trackListController } from 'api';
+import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from '../track-list.actions';
 
 function* fetchTrackListWorker() {
 

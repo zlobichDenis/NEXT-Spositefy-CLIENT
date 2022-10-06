@@ -1,11 +1,11 @@
-import { Slider } from "@mui/material";
+import { Slider } from '@mui/material';
 
-import { VolumeControlWrapper } from "./VolumeControl.styled";
+import { VolumeControlWrapper } from './VolumeControl.styled';
 
 type VolumeControlProps = {
   volume: number;
   onChange: (event) => void;
-}
+};
 
 export const VolumeControl = ({ volume, onChange }: VolumeControlProps) => {
   return (
@@ -20,5 +20,5 @@ export const VolumeControl = ({ volume, onChange }: VolumeControlProps) => {
       />
       <div>{volume}</div>
     </VolumeControlWrapper>
-  )
+  );
 };

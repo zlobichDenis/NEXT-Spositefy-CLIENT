@@ -1,6 +1,6 @@
-import { Navbar } from "components";
-import { Player } from "features/player";
-import { ContainerStyled } from "./MainLayout.styled";
+import { Navbar } from 'components';
+import { Player } from 'features/player';
+import { ContainerStyled } from './MainLayout.styled';
 
 export const MainLayout = ({ children }) => {
   return (
@@ -11,5 +11,5 @@ export const MainLayout = ({ children }) => {
       </ContainerStyled>
       <Player />
     </>
-  )
+  );
 };

@@ -1,5 +1,5 @@
-import { Grid, styled } from "@mui/material";
-import { PauseCircle as PauseIcon, PlayCircle as PlayIcon } from "@mui/icons-material";
+import { Grid, styled } from '@mui/material';
+import { PauseCircle as PauseIcon, PlayCircle as PlayIcon } from '@mui/icons-material';
 
 import { colors } from 'theme';
 

@@ -1,10 +1,10 @@
-import { TrackProgressWrapper, TrackProgressSlider } from "./TrackProgress.styled";
+import { TrackProgressWrapper, TrackProgressSlider } from './TrackProgress.styled';
 
 type TrackProgressProps = {
   fullDuration: number;
   currentDuration: number;
   onChange: (event: Event) => void;
-}
+};
 
 export const TrackProgress = ({ fullDuration, currentDuration, onChange }: TrackProgressProps) => {
 
@@ -21,5 +21,5 @@ export const TrackProgress = ({ fullDuration, currentDuration, onChange }: Track
       />
       <div>{currentDuration} / {fullDuration}</div>
     </TrackProgressWrapper>
-  )
+  );
 };

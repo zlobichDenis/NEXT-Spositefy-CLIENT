@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { styled } from '@mui/material';
 
 export const VolumeControlWrapper = styled('div')`
   display: flex;

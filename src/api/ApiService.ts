@@ -1,4 +1,4 @@
-import { HttpClient, httpClient } from "services";
+import { HttpClient, httpClient } from 'services';
 
 export class ApiService {
   client: HttpClient;

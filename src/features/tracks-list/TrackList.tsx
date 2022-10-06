@@ -12,7 +12,7 @@ import { useTrackList } from "./useTrackList";
 export const TrackList = () => {
   const routeTo = useRoute();
   const { changePlayingTrack, tracks } = useTrackList();
-  console.log(tracks)
+
   return (
     <TrackListContainer container>
       <TrackListBox>

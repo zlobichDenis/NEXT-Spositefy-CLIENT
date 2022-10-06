@@ -1,6 +1,6 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction } from '@reduxjs/toolkit';
 
-import { Track } from "types";
+import { Track } from 'types';
 
 export enum PlayerActions {
   PLAY = 'player/play',

@@ -1,12 +1,12 @@
-import { Home, Album, MusicNote } from "@mui/icons-material";
+import { Home, Album, MusicNote } from '@mui/icons-material';
 
-import { NavbarButtonsConfig } from "./types";
+import { NavbarButtonsConfig } from './types';
 
 export const NAVBAR_BUTTONS: NavbarButtonsConfig = {
   home: {
     name: 'Home',
     icon: <Home color="primary" />,
-    href: '/'
+    href: '/',
   },
   albums: {
     name: 'Albums',

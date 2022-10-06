@@ -1,7 +1,7 @@
-import { createAction } from "@reduxjs/toolkit";
-import { AxiosErrorSerialized } from "axios";
+import { createAction } from '@reduxjs/toolkit';
+import { AxiosErrorSerialized } from 'axios';
 
-import { Track } from "types";
+import { Track } from 'types';
 
 export enum TrackListActions {
   FETCH_TRACK_LIST = 'track-list/fetch',

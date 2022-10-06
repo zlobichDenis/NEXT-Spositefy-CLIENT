@@ -8,7 +8,7 @@ import axios, {
 import pickBy from 'lodash/pickBy';
 import queryString from 'query-string';
 
-import { config } from "config";
+import { config } from 'config';
 
 declare module 'axios' {
   export interface AxiosErrorSerialized<T = any> {
@@ -82,7 +82,7 @@ class HttpClient {
     data?: object,
     config?: AxiosRequestConfig,
   ): AxiosPromise<T> {
-    return this.request({ ...config, url, method: "POST", data });
+    return this.request({ ...config, url, method: 'POST', data });
   }
 
   put<T = any>(
@@ -90,7 +90,7 @@ class HttpClient {
     data?: object,
     config?: AxiosRequestConfig,
   ): AxiosPromise<T> {
-    return this.request({ ...config, url, method: "PUT", data });
+    return this.request({ ...config, url, method: 'PUT', data });
   }
 
   patch = <T extends {} = any>(

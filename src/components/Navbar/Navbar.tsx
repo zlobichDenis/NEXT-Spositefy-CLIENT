@@ -7,11 +7,11 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-} from "@mui/material";
+} from '@mui/material';
 
-import { useRoute } from "hooks";
-import { NAVBAR_BUTTONS } from "./config";
-import { DrawerStyled, BoxStyled } from "./Navbar.styled";
+import { useRoute } from 'hooks';
+import { NAVBAR_BUTTONS } from './config';
+import { DrawerStyled, BoxStyled } from './Navbar.styled';
 
 export const Navbar = () => {
   const routeTo = useRoute();
@@ -44,4 +44,4 @@ export const Navbar = () => {
       </DrawerStyled>
     </BoxStyled>
   );
-}
+};

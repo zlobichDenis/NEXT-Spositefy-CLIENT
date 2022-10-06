@@ -1,4 +1,4 @@
-import { useRef, RefObject, ChangeEvent } from "react";
+import { useRef, RefObject, ChangeEvent } from 'react';
 
 interface UseFileInput {
   ref: RefObject<HTMLInputElement> | null;
@@ -6,7 +6,7 @@ interface UseFileInput {
   handleUploadFiles: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const useFileInput= (): UseFileInput => {
+export const useFileInput = (): UseFileInput => {
   const ref = useRef<HTMLInputElement>(null);
 
   const click = () => {
@@ -14,7 +14,7 @@ export const useFileInput= (): UseFileInput => {
   };
 
   const handleUploadFiles = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.files)
+    console.log(event.target.files);
   };
 
   return {

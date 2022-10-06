@@ -1,12 +1,12 @@
-import { Button } from "@mui/material";
+import { Button } from '@mui/material';
 
-import { FileInput } from "./FileUploadButton.styled";
-import { useFileInput } from "./useFileInput";
+import { FileInput } from './FileUploadButton.styled';
+import { useFileInput } from './useFileInput';
 
 type FileUploadButtonProps = {
   fileType: string;
   handleUpload: any;
-}
+};
 
 export const FileUploadButton = ({ fileType, handleUpload }: FileUploadButtonProps) => {
   const { ref, click } = useFileInput();
@@ -23,5 +23,5 @@ export const FileUploadButton = ({ fileType, handleUpload }: FileUploadButtonPro
         Upload
       </Button>
     </div>
-  )
+  );
 };

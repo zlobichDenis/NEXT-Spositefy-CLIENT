@@ -1,7 +1,7 @@
-import { createSlice, createSelector } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 
-import { Track } from "types";
-import { RootState } from "store/rootReducer";
+import { Track } from 'types';
+import { RootState } from 'store/rootReducer';
 import {
   pauseAction,
   playAction,
@@ -9,7 +9,7 @@ import {
   setDurationAction,
   setTrackAction,
   setVolumeAction,
-} from "./player.actions";
+} from './player.actions';
 
 export type PlayerState = {
   track: Track | null;
@@ -17,7 +17,7 @@ export type PlayerState = {
   currentTime: number;
   volume: number;
   isPlaying: boolean;
-}
+};
 
 export const initialState: PlayerState = {
   track: null,

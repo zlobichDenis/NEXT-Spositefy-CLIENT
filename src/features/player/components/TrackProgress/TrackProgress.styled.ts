@@ -1,4 +1,4 @@
-import { styled, Slider } from "@mui/material";
+import { styled, Slider } from '@mui/material';
 
 export const TrackProgressWrapper = styled('div')`
   width: 100%;

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "start:analyze": "env-cmd -f .env.analyze next dev",
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@emotion/cache": "^11.9.3",
@@ -30,12 +32,25 @@
     "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.4.0",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/parser": "^5.39.0",
+    "env-cmd": "^10.1.0",
     "eslint": "8.19.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "12.2.0",
+    "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "typescript": "4.7.4"
+    "eslint-webpack-plugin": "^3.2.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.4",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "stylelint-webpack-plugin": "^3.3.0",
+    "typescript": "4.7.4",
+    "webpack-bundle-analyzer": "^4.6.1"
   }
 }

@@ -1,4 +1,4 @@
-import { styled, Drawer, Box } from "@mui/material";
+import { styled, Drawer, Box } from '@mui/material';
 
 export const DrawerStyled = styled(Drawer)`
   flex-shrink: 0;
