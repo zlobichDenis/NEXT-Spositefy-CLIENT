@@ -1,15 +1,41 @@
-const withImages = require('next-images');
 const withPlugins = require('next-compose-plugins');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const withImages = require('next-images');
 
 const nextConfig = {
-  reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true
   },
-  webpack: (config) => {
+    images: {
+        disableStaticImages: true
+    },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+      config.module.rules.push({
+          test: /\.s[ac]ss$/i,
+          use: [
+              "style-loader",
+              "css-loader",
+              "sass-loader"
+          ],
+      });
+        //NEXT dont support compressing instead use Image from next/image
+      // config.module.rules.push({
+      //     test: /\.(png|jpe?g|webp|git|svg|)$/i,
+      //     use: [
+      //         {
+      //             loader: 'img-optimize-loader',
+      //             options: {
+      //                 compress: {
+      //                     mode: 'high',
+      //                     webp: true,
+      //                 },
+      //             },
+      //         }
+      //     ]
+      // });
+
       process.env.ANALYZE &&
       config.plugins.push(
           new BundleAnalyzerPlugin({
@@ -40,3 +66,4 @@ const nextConfig = {
 module.exports = withPlugins([
     [withImages, { esModule: true }],
 ], nextConfig);
+
