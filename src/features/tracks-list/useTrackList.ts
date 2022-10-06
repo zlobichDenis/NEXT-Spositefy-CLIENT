@@ -19,7 +19,7 @@ export const useTrackList = () => {
     if (playingTrack) {
       selectTrack(playingTrack);
     }
-  }, [playingTrack]);
+  }, [playingTrack, selectTrack]);
 
   useEffect(() => {
     getTrackList();

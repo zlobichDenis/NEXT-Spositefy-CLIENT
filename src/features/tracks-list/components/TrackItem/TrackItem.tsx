@@ -21,10 +21,10 @@ export const TrackItem = ({ track, isPlaying = false, onCardClick, onPlayClick }
 
   return (
     <TrackItemCard onClick={onCardClick}>
-      <IconButton onClick={onPlayClick}>
+      <IconButton className="play-pause" onClick={onPlayClick}>
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </IconButton>
-      <TrackItemCardPicture src={picture}/>
+      <TrackItemCardPicture src={`http://localhost:5000/${picture}`}/>
       <TrackItemCardDetails container>
         <TrackItemCardDetailsName variant="body1">{name}</TrackItemCardDetailsName>
         <TrackItemCardDetailsArtist variant="body1">{artist}</TrackItemCardDetailsArtist>

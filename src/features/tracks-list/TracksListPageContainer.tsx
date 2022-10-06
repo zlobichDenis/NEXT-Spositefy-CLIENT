@@ -26,13 +26,13 @@ export const TracksListPageContainer = () => {
           <TrackListCardBox>
             <TrackListCardContent container>
               <h1>List of tracks</h1>
-              <Button onClick={routeToTrackForm}>
+              <Button className="upload-button" onClick={routeToTrackForm}>
                 Upload
               </Button>
             </TrackListCardContent>
           </TrackListCardBox>
 
-          <TrackList />
+          <TrackList  />
 
         </TrackListCard>
       </TrackListContainer>

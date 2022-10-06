@@ -59,7 +59,7 @@ export const usePlayer = () => {
 
   const selectTrack = useCallback((track: Track) => {
     setTrack(track);
-    audio.src = track.audio;
+    audio.src = `http://localhost:5000/${track.audio}`;
     playTrack();
 
     audio.onloadeddata = () => {

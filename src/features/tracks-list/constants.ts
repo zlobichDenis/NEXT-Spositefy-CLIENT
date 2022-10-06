@@ -1,1 +1,1 @@
-export const CREATE_TRACK_FORM_PATH = '/tracks-list/create';
+export const CREATE_TRACK_FORM_PATH = '/tracks/create';

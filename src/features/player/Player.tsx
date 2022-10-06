@@ -33,7 +33,7 @@ export const Player = () => {
   }
 
   return (
-    <PlayerWrapper>
+    <PlayerWrapper className="player">
       <IconButton
         onClick={playPauseToggle}
         size="large"

@@ -8,7 +8,8 @@
     "start": "next start",
     "start:analyze": "env-cmd -f .env.analyze next dev",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "test": "cypress open"
   },
   "dependencies": {
     "@emotion/cache": "^11.9.3",
@@ -37,10 +38,12 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/parser": "^5.39.0",
+    "cypress": "^10.9.0",
     "env-cmd": "^10.1.0",
     "eslint": "8.19.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "12.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",

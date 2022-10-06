@@ -24,11 +24,13 @@
     "incremental": true
   },
   "include": [
+    "cypress",
     "src",
     "src/global.d.ts",
-    "additional.d.ts"
+    "additional.d.ts",
   ],
   "exclude": [
+    "node_modules",
     "**/*.stories.tsx"
   ]
 }

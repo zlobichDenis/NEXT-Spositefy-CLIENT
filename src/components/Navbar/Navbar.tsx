@@ -28,6 +28,7 @@ export const Navbar = () => {
         <List>
           {Object.keys(NAVBAR_BUTTONS).map((name) => (
             <ListItem
+              className={name}
               key={name}
               onClick={routeTo(NAVBAR_BUTTONS[name].href)}
               disablePadding
