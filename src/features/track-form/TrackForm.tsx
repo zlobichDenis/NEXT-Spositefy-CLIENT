@@ -1,46 +1,42 @@
-import { Button } from "@mui/material";
+import { Button } from '@mui/material';
 
-import { MainLayout } from "layouts";
-import { TrackFormStepWrapper } from "./components";
-import {
-  TrackFormContainer,
-  TrackFormButtonWrapper,
-} from "./TrackForm.styled";
-import { useTrackForm } from "./hooks";
+import { TrackFormCoverStep, TrackFormInfoStep, TrackFormStepWrapper, TrackFormUploadStep } from './components';
+import { TrackFormButtonWrapper } from './TrackFormContainer.styled';
+import { useTrackForm } from './hooks';
 
 export const TrackForm = () => {
-  const {
-    activeStep,
-    goNextStep,
-    goPrevStep,
-    disabledNextButton,
-    disabledPrevButton,
-    currentStepConfig,
-  } = useTrackForm();
+    const {
+        activeStep,
+        goNextStep,
+        goPrevStep,
+    } = useTrackForm();
 
-  const { title, Component } = currentStepConfig;
-
-  return (
-    <MainLayout>
-      <TrackFormContainer container>
-        <TrackFormStepWrapper activeStep={activeStep}>
-          <h2>{title}</h2>
-          <Component />
-        </TrackFormStepWrapper>
-        <TrackFormButtonWrapper container>
-          <Button
-            disabled={disabledPrevButton}
-            onClick={goPrevStep}
-          >
-            Back
-          </Button>
-          <Button
-            disabled={disabledNextButton}
-            onClick={goNextStep}>
-            Next
-          </Button>
-        </TrackFormButtonWrapper>
-      </TrackFormContainer>
-    </MainLayout>
-  )
+    return (
+        <>
+            <TrackFormStepWrapper activeStep={activeStep}>
+                {activeStep === 0 && (
+                    <TrackFormInfoStep />
+                )}
+                {activeStep === 1 && (
+                    <TrackFormCoverStep />
+                )}
+                {activeStep === 2 && (
+                    <TrackFormUploadStep />
+                )}
+            </TrackFormStepWrapper>
+            <TrackFormButtonWrapper container>
+                <Button
+                    disabled={activeStep === 0}
+                    onClick={goPrevStep}
+                >
+                    Back
+                </Button>
+                <Button
+                    disabled={activeStep === 2}
+                    onClick={goNextStep}>
+                    Next
+                </Button>
+            </TrackFormButtonWrapper>
+        </>
+    );
 };

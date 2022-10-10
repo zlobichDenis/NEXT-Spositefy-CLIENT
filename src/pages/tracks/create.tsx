@@ -1,8 +1,8 @@
-import { TrackForm } from "features/track-form";
+import { TrackFormContainer } from "features/track-form";
 
 const Create = () => {
   return (
-    <TrackForm />
+    <TrackFormContainer />
   )
 };
 

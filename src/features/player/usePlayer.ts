@@ -35,7 +35,7 @@ export const usePlayer = () => {
     } else {
       playTrack();
     }
-  }, [pause, play, state, stopPropagation]);
+  }, [pauseTrack, playTrack, state.isPlaying]);
 
   const changeVolume = useCallback((event) => {
     const volume = Math.ceil(event.target.value);
@@ -68,7 +68,7 @@ export const usePlayer = () => {
     audio.ontimeupdate = () => {
       setCurrentTime(Math.ceil(audio.currentTime));
     };
-  }, [setTrack, pauseTrack, playTrack]);
+  }, [setTrack, playTrack, setDuration, setCurrentTime]);
 
   return {
     playPauseToggle,

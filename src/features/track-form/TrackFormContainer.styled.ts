@@ -1,6 +1,6 @@
 import { Grid, styled } from "@mui/material";
 
-export const TrackFormContainer = styled(Grid)`
+export const TrackFormMainContainer = styled(Grid)`
   display: flex;
   flex-direction: column;
   justify-content: center;

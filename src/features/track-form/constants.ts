@@ -1,9 +1,19 @@
+export const TRACK_FORM_FIELDS = {
+  NAME: 'name',
+  ARTIST: 'artist',
+  TEXT: 'text',
+  AUDIO: 'audio',
+  PICTURE: 'picture',
+  ACTIVE_STEP: 'activeStep',
+};
+
 export const TRACK_FORM_INITIAL_VALUE = {
-  name: '',
-  artist: '',
-  text: '',
-  audio: null,
-  picture: null,
+  [TRACK_FORM_FIELDS.NAME]: '',
+  [TRACK_FORM_FIELDS.ARTIST]: '',
+  [TRACK_FORM_FIELDS.TEXT]: '',
+  [TRACK_FORM_FIELDS.AUDIO]: null,
+  [TRACK_FORM_FIELDS.PICTURE]: null,
+  [TRACK_FORM_FIELDS.ACTIVE_STEP]: 0,
 };
 
 export const TRACK_FORM_INITIAL_STEP = 0;

@@ -1,15 +1,14 @@
 import { FileUploadButton } from "components";
+import { useInput } from 'common';
+import { TRACK_FORM_FIELDS } from '../../constants';
 
-type TrackFormCoverStep = {
-  fileType: string;
-  handleUpload: any;
-}
+export const TrackFormCoverStep = () => {
+  const { onChange } = useInput(TRACK_FORM_FIELDS.PICTURE);
 
-export const TrackFormCoverStep = ({ fileType, handleUpload }: TrackFormCoverStep) => {
   return (
     <FileUploadButton
-      fileType={fileType}
-      handleUpload={handleUpload}
+      fileType="image/*"
+      handleUpload={onChange}
     />
   )
 };

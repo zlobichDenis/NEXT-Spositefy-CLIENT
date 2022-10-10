@@ -1,15 +1,14 @@
-import { FileUploadButton } from "components";
+import { FileUploadButton } from 'components';
+import { useInput } from 'common';
+import { TRACK_FORM_FIELDS } from '../../constants';
 
-type TrackFormUploadStep = {
-  fileType: string;
-  handleUpload: any;
-}
+export const TrackFormUploadStep = () => {
+    const { onChange } = useInput(TRACK_FORM_FIELDS.AUDIO);
 
-export const TrackFormUploadStep = ({ fileType, handleUpload }: TrackFormUploadStep) => {
-  return (
-    <FileUploadButton
-      fileType={fileType}
-      handleUpload={handleUpload}
-    />
-  )
+    return (
+        <FileUploadButton
+            fileType="audio/*"
+            handleUpload={onChange}
+        />
+    )
 };
