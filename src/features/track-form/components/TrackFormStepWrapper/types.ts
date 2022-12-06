@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type TrackFromStepProps = {
-  activeStep: number;
-  children: ReactNode;
+    activeStep: number;
+    children: ReactNode;
 };

@@ -1,4 +1,4 @@
-import { styled, Grid, Box } from "@mui/material";
+import { styled, Grid, Box } from '@mui/material';
 
 export const TrackListContainer = styled(Grid)`
   flex-direction: column;

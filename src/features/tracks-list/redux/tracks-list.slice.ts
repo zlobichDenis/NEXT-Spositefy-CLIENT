@@ -7,34 +7,34 @@ import { REDUX_STATES } from 'shared';
 import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from './track-list.actions';
 
 type TracksListState = {
-  state: REDUX_STATES;
-  data?: Track[];
-  error?: AxiosErrorSerialized;
+    state: REDUX_STATES;
+    data?: Track[];
+    error?: AxiosErrorSerialized;
 };
 
 const initialState: TracksListState = {
-  state: REDUX_STATES.IDLE,
+    state: REDUX_STATES.IDLE,
 };
 
 export const tracksListSlice = createSlice({
-  name: 'track-list',
-  initialState,
-  reducers: {},
-  extraReducers: ((builder) => {
-    builder.addCase(fetchTrackList, (state) => {
-      state.state = REDUX_STATES.PENDING;
-    });
+    name: 'track-list',
+    initialState,
+    reducers: {},
+    extraReducers: ((builder) => {
+        builder.addCase(fetchTrackList, (state) => {
+            state.state = REDUX_STATES.PENDING;
+        });
 
-    builder.addCase(fulfilledTrackList, (state, { payload }) => {
-      state.state = REDUX_STATES.FULFILLED;
-      state.data = payload;
-    });
+        builder.addCase(fulfilledTrackList, (state, { payload }) => {
+            state.state = REDUX_STATES.FULFILLED;
+            state.data = payload;
+        });
 
-    builder.addCase(rejectedTrackList, (state, { payload }) => {
-      state.state = REDUX_STATES.REJECTED;
-      state.error = payload;
-    });
-  }),
+        builder.addCase(rejectedTrackList, (state, { payload }) => {
+            state.state = REDUX_STATES.REJECTED;
+            state.error = payload;
+        });
+    }),
 });
 
 export const getTrackList = (state: RootState) => state.trackList;

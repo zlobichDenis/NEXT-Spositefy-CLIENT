@@ -3,21 +3,21 @@ import createSagaMiddleware from 'redux-saga';
 
 import { rootReducer } from './rootReducer';
 import { rootWatcher } from './saga';
-import {createWrapper} from "next-redux-wrapper";
+import { createWrapper } from 'next-redux-wrapper';
 
 export const store = () => {
-  const sagaMiddleware = createSagaMiddleware();
+    const sagaMiddleware = createSagaMiddleware();
 
-  const reduxStore = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => (
-        getDefaultMiddleware({serializableCheck: true}).concat(sagaMiddleware)
-    ),
-  });
+    const reduxStore = configureStore({
+        reducer: rootReducer,
+        middleware: (getDefaultMiddleware) => (
+            getDefaultMiddleware({ serializableCheck: true }).concat(sagaMiddleware)
+        ),
+    });
 
-  sagaMiddleware.run(rootWatcher);
+    sagaMiddleware.run(rootWatcher);
 
-  return reduxStore;
+    return reduxStore;
 };
 
 export const wrapper = createWrapper(store);

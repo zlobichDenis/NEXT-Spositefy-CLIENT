@@ -1,6 +1,6 @@
-import { Card, Grid, IconButton, styled, Typography } from "@mui/material";
+import { Card, Grid, IconButton, styled, Typography } from '@mui/material';
 
-import { colors } from "theme";
+import { colors } from 'theme';
 
 export const TrackItemCard = styled(Card)`
   padding: 12px;

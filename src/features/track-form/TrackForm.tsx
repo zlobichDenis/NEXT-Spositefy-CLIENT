@@ -15,13 +15,13 @@ export const TrackForm = () => {
         <>
             <TrackFormStepWrapper activeStep={activeStep}>
                 {activeStep === 0 && (
-                    <TrackFormInfoStep />
+                    <TrackFormInfoStep/>
                 )}
                 {activeStep === 1 && (
-                    <TrackFormCoverStep />
+                    <TrackFormCoverStep/>
                 )}
                 {activeStep === 2 && (
-                    <TrackFormUploadStep />
+                    <TrackFormUploadStep/>
                 )}
             </TrackFormStepWrapper>
             <TrackFormButtonWrapper container>

@@ -1,4 +1,4 @@
-import { Card, Grid, styled } from "@mui/material";
+import { Card, Grid, styled } from '@mui/material';
 
 export const TrackFormStepCardWrapper = styled(Grid)`
   height: 600px;

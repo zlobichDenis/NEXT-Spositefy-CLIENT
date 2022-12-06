@@ -1,4 +1,4 @@
-import { styled, Grid, TextField } from "@mui/material";
+import { styled, Grid, TextField } from '@mui/material';
 
 export const TrackFormInfoContainer = styled(Grid)`
   padding: 20px;

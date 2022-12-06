@@ -3,12 +3,12 @@ import { createAction } from '@reduxjs/toolkit';
 import { Track } from 'types';
 
 export enum PlayerActions {
-  PLAY = 'player/play',
-  PAUSE = 'player/pause',
-  SET_VOLUME = 'player/set-volume',
-  SET_DURATION = 'player/set-duration',
-  SET_TRACK = 'player/set-track',
-  SET_CURRENT_TIME = 'player/set-current-time',
+    PLAY = 'player/play',
+    PAUSE = 'player/pause',
+    SET_VOLUME = 'player/set-volume',
+    SET_DURATION = 'player/set-duration',
+    SET_TRACK = 'player/set-track',
+    SET_CURRENT_TIME = 'player/set-current-time',
 }
 
 export const playAction = createAction(PlayerActions.PLAY);

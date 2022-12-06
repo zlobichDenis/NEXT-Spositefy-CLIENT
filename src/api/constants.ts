@@ -1,3 +1,3 @@
 export const API = {
-  trackList: 'tracks',
+    trackList: 'tracks',
 };

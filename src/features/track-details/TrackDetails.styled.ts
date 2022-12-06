@@ -1,4 +1,4 @@
-import { styled, Button, Grid } from "@mui/material";
+import { styled, Button, Grid } from '@mui/material';
 
 export const TrackDetailsContainer = styled(Grid)`
   display: flex;

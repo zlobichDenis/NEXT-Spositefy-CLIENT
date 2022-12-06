@@ -6,17 +6,17 @@ import { fetchTrackList, fulfilledTrackList, rejectedTrackList } from '../track-
 
 function* fetchTrackListWorker() {
 
-  try {
-    const trackList = yield call(trackListController.get);
+    try {
+        const trackList = yield call(trackListController.get);
 
-    yield put(fulfilledTrackList(trackList.data));
-  } catch (err) {
-    const serializedError = (err as AxiosError).serialize();
+        yield put(fulfilledTrackList(trackList.data));
+    } catch (err) {
+        const serializedError = (err as AxiosError).serialize();
 
-    yield put(rejectedTrackList(serializedError));
-  }
+        yield put(rejectedTrackList(serializedError));
+    }
 }
 
 export function* fetchTrackListWatcher() {
-  yield takeLatest(fetchTrackList, fetchTrackListWorker);
+    yield takeLatest(fetchTrackList, fetchTrackListWorker);
 }

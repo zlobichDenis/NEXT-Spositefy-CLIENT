@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 
 
 export const useRoute = () => {
-  const { push } = useRouter();
+    const { push } = useRouter();
 
-  const routeTo = useCallback((path: string) => () => {
-    push(path);
-  }, [push]);
+    const routeTo = useCallback((path: string) => () => {
+        push(path);
+    }, [push]);
 
-  return routeTo;
+    return routeTo;
 };

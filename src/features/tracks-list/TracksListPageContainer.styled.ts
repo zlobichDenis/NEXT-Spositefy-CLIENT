@@ -1,4 +1,4 @@
-import { Box, Card, Grid, styled } from "@mui/material";
+import { Box, Card, Grid, styled } from '@mui/material';
 
 export const TrackListContainer = styled(Grid)`
   justify-content: center;

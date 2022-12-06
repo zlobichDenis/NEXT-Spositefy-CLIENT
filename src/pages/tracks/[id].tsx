@@ -1,9 +1,9 @@
-import { TrackDetails } from "features/track-details";
+import { TrackDetails } from 'features/track-details';
 
 const TrackDetailsPage = () => {
-  return (
-    <TrackDetails  />
-  )
+    return (
+        <TrackDetails/>
+    )
 };
 
 export default TrackDetailsPage;

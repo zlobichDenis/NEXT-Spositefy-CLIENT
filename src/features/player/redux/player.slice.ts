@@ -3,59 +3,59 @@ import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { Track } from 'types';
 import { RootState } from 'store/rootReducer';
 import {
-  pauseAction,
-  playAction,
-  setCurrentTimeAction,
-  setDurationAction,
-  setTrackAction,
-  setVolumeAction,
+    pauseAction,
+    playAction,
+    setCurrentTimeAction,
+    setDurationAction,
+    setTrackAction,
+    setVolumeAction,
 } from './player.actions';
 
 export type PlayerState = {
-  track: Track | null;
-  duration: number;
-  currentTime: number;
-  volume: number;
-  isPlaying: boolean;
+    track: Track | null;
+    duration: number;
+    currentTime: number;
+    volume: number;
+    isPlaying: boolean;
 };
 
 export const initialState: PlayerState = {
-  track: null,
-  duration: 0,
-  currentTime: 0,
-  volume: 0.1,
-  isPlaying: false,
+    track: null,
+    duration: 0,
+    currentTime: 0,
+    volume: 0.1,
+    isPlaying: false,
 };
 
 export const playerSlice = createSlice({
-  name: 'player',
-  initialState,
-  reducers: {},
-  extraReducers: ((builder) => {
-    builder.addCase(playAction, (state) => {
-      state.isPlaying = true;
-    });
+    name: 'player',
+    initialState,
+    reducers: {},
+    extraReducers: ((builder) => {
+        builder.addCase(playAction, (state) => {
+            state.isPlaying = true;
+        });
 
-    builder.addCase(pauseAction, (state) => {
-      state.isPlaying = false;
-    });
+        builder.addCase(pauseAction, (state) => {
+            state.isPlaying = false;
+        });
 
-    builder.addCase(setCurrentTimeAction, (state, { payload }) => {
-      state.currentTime = payload;
-    });
+        builder.addCase(setCurrentTimeAction, (state, { payload }) => {
+            state.currentTime = payload;
+        });
 
-    builder.addCase(setTrackAction, (state, { payload }) => {
-      state.track = payload;
-    });
+        builder.addCase(setTrackAction, (state, { payload }) => {
+            state.track = payload;
+        });
 
-    builder.addCase(setDurationAction, (state, { payload }) => {
-      state.duration = payload;
-    });
+        builder.addCase(setDurationAction, (state, { payload }) => {
+            state.duration = payload;
+        });
 
-    builder.addCase(setVolumeAction, (state, { payload }) => {
-      state.volume = payload;
-    });
-  }),
+        builder.addCase(setVolumeAction, (state, { payload }) => {
+            state.volume = payload;
+        });
+    }),
 });
 
 const getPlayerState = (state: RootState) => state.player;
