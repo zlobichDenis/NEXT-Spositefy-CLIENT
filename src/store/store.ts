@@ -11,7 +11,11 @@ export const store = () => {
     const reduxStore = configureStore({
         reducer: rootReducer,
         middleware: (getDefaultMiddleware) => (
-            getDefaultMiddleware({ serializableCheck: true }).concat(sagaMiddleware)
+            getDefaultMiddleware({
+                serializableCheck: {
+                    ignoredActions: ['track-form/create'],
+                },
+            }).concat(sagaMiddleware)
         ),
     });
 

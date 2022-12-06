@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
 import { useAppDispatch, useAppSelector } from 'store';
-import { Track } from 'types';
 import {
     PlayerState,
     selectPlayerCurrentTime,
@@ -18,6 +17,7 @@ import {
     setTrackAction,
     setCurrentTimeAction,
 } from './player.actions';
+import { Track } from '../../../api';
 
 interface UsePlayerReducer {
     state: PlayerState;

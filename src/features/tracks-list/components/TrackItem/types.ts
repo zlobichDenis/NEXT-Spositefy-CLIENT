@@ -1,4 +1,4 @@
-import { Track } from 'types';
+import { Track } from '../../../../api';
 
 export type TrackItemProps = {
     track: Track;

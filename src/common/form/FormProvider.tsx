@@ -12,7 +12,7 @@ export const FormProvider = ({ initialValues, onSubmit, children }) => {
             return;
         }
 
-        setFormValues((prevState) => ({ ...prevState, inputName: value }));
+        setFormValues((prevState) => ({ ...prevState, [inputName]: value }));
     }, [formValues]);
 
     const reset = useCallback(() => {

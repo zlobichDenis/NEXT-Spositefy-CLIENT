@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { Track } from 'types';
 import { stopPropagation } from 'utils';
 import { usePlayer } from 'features/player';
 import { useTrackListReducer } from './redux/useTrackListReducer';
+import { Track } from '../../api';
 
 export const useTrackList = () => {
     const [playingTrack, setPlayingTrack] = useState<Track | null>(null);

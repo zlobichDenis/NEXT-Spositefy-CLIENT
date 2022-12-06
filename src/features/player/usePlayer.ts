@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react';
 
-import { Track } from 'types';
 import { stopPropagation } from 'utils';
 import { usePlayerReducer } from './redux';
+import { Track } from '../../api';
 
 let audio;
 

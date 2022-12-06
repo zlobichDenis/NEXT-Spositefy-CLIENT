@@ -9,7 +9,10 @@ export const TrackForm = () => {
         activeStep,
         goNextStep,
         goPrevStep,
+        submit,
     } = useTrackForm();
+
+    const isActiveStepLast = activeStep === 2;
 
     return (
         <>
@@ -31,11 +34,18 @@ export const TrackForm = () => {
                 >
                     Back
                 </Button>
-                <Button
-                    disabled={activeStep === 2}
-                    onClick={goNextStep}>
-                    Next
-                </Button>
+                {isActiveStepLast ? (
+                    <Button
+                        onClick={submit}>
+                        Submit
+                    </Button>
+                ) : (
+                    <Button
+                        disabled={activeStep === 2}
+                        onClick={goNextStep}>
+                        Next
+                    </Button>
+                )}
             </TrackFormButtonWrapper>
         </>
     );

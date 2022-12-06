@@ -1,8 +1,16 @@
+export type CreateTrackDto = {
+    name: string;
+    artist: string;
+    text: string;
+    picture: FileList;
+    audio: FileList;
+};
+
 export type Comment = {
     _id: string;
     username: string;
     text: string;
-}
+};
 
 export type Track = {
     _id: string;
@@ -14,4 +22,4 @@ export type Track = {
     picture: string;
     audio: string;
     comments: Comment[];
-}
+};

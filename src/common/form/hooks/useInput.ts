@@ -6,7 +6,7 @@ export const useInput = (name: string) => {
 
     const onChange = useCallback((event) => {
         if (event.target.files?.length) {
-            handleChange(name, event.target.files[0]);
+            handleChange(name, event.target.files);
         } else {
             handleChange(name, event.target.value);
         }

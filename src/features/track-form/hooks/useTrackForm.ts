@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react';
 
 import { TRACK_FORM_INITIAL_STEP } from '../constants';
 import { useForm } from '../../../common';
+import { CreateTrackDto } from '../../../api/types';
 
 type TrackFormData = {
     picture: any;
@@ -18,7 +19,7 @@ export interface UseTrackForm {
     goNextStep: () => void;
     goPrevStep: () => void;
     resetForm: () => void;
-    onSubmit: () => void;
+    submit: () => void;
 }
 
 export const useTrackForm = (): UseTrackForm => {
@@ -41,6 +42,21 @@ export const useTrackForm = (): UseTrackForm => {
         reset()
     }, [reset]);
 
+    const submit = useCallback(() => {
+        const dto: CreateTrackDto = {
+            picture: formValues.picture,
+            audio: formValues.audio,
+            artist: formValues.artist,
+            name: formValues.name,
+            text: formValues.text,
+        };
+        const formData = new FormData();
+
+        Object.keys(dto).forEach((key) => formData.append(key, dto[key]));
+
+        onSubmit(formData);
+    }, [onSubmit, formValues]);
+
 
     return {
         activeStep: activeStep,
@@ -49,6 +65,6 @@ export const useTrackForm = (): UseTrackForm => {
         goNextStep,
         goPrevStep,
         resetForm,
-        onSubmit,
+        submit,
     };
 };

@@ -1,6 +1,5 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 
-import { Track } from 'types';
 import { RootState } from 'store/rootReducer';
 import {
     pauseAction,
@@ -10,6 +9,7 @@ import {
     setTrackAction,
     setVolumeAction,
 } from './player.actions';
+import { Track } from '../../../api';
 
 export type PlayerState = {
     track: Track | null;
